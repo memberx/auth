@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import connectDB from './utils/connectDB';
 import userRouter from './routes/user.route';
 import authRouter from './routes/auth.route';
+import playerRouter from './routes/player.route';
 import sessionRouter from './routes/session.route';
 
 const app = express();
@@ -33,6 +34,7 @@ app.use(
 // Routes
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/player', playerRouter);
 // 👇 Register the session router
 app.use('/api/sessions', sessionRouter);
 

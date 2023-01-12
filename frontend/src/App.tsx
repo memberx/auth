@@ -5,6 +5,7 @@ import ProfilePage from './pages/profile.page';
 import HomePage from './pages/home.page';
 import LoginPage from './pages/login.page';
 import RegisterPage from './pages/register.page';
+import PlayersPage from './pages/players.page';
 import UnauthorizePage from './pages/unauthorize.page';
 import RequireUser from './components/requireUser';
 import { ToastContainer } from 'react-toastify';
@@ -34,6 +35,7 @@ function App() {
         </Route>
         <Route path='login' element={<LoginPage />} />
         <Route path='register' element={<RegisterPage />} />
+        <Route path='players' element={<PlayersPage />} />
         <Route path='verifyemail' element={<EmailVerificationPage />}>
           <Route path=':verificationCode' element={<EmailVerificationPage />} />
         </Route>

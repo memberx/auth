@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { authApi } from './api/authApi';
 import { postApi } from './api/postApi';
+import { playersApi } from './api/playersApi';
 import { userApi } from './api/userApi';
 import userReducer from './features/userSlice';
 import postReducer from './features/postSlice';
@@ -12,6 +13,7 @@ export const store = configureStore({
     [userApi.reducerPath]: userApi.reducer,
     // Connect the PostApi reducer to the store
     [postApi.reducerPath]: postApi.reducer,
+    [playersApi.reducerPath]: playersApi.reducer,
     userState: userReducer,
     postState: postReducer,
   },
@@ -22,6 +24,7 @@ export const store = configureStore({
       userApi.middleware,
       // Add the PostApi middleware to the store
       postApi.middleware,
+      playersApi.middleware,
     ]),
 });
 
