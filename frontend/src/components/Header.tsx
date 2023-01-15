@@ -96,6 +96,12 @@ const Header = () => {
               <LoadingButton onClick={() => setOpenPostModal(true)}>
                 Create Post
               </LoadingButton>
+              <LoadingButton href="/profile">
+                Profile
+              </LoadingButton>
+              <LoadingButton href="/players">
+                Players
+              </LoadingButton>
             </Box>
           </Toolbar>
         </Container>

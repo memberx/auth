@@ -8,6 +8,7 @@ import connectDB from './utils/connectDB';
 import userRouter from './routes/user.route';
 import authRouter from './routes/auth.route';
 import playerRouter from './routes/player.route';
+import playersRouter from './routes/players.route';
 import sessionRouter from './routes/session.route';
 
 const app = express();
@@ -35,6 +36,7 @@ app.use(
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/player', playerRouter);
+app.use('/api/players', playersRouter);
 // 👇 Register the session router
 app.use('/api/sessions', sessionRouter);
 

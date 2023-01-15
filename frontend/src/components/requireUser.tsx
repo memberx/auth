@@ -1,6 +1,7 @@
 import { useCookies } from 'react-cookie';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { userApi } from '../redux/api/userApi';
+import { customApi } from '../redux/api/customApi';
 import FullScreenLoader from './FullScreenLoader';
 
 const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
@@ -17,6 +18,16 @@ const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
   const user = userApi.endpoints.getMe.useQueryState(null, {
     selectFromResult: ({ data }) => data,
   });
+
+  customApi.endpoints.getMe.useQuery(null, {
+    skip: false,
+    refetchOnMountOrArgChange: true,
+  });
+  customApi.endpoints.getMe.useQueryState(null, {
+    selectFromResult: ({ data }) => data,
+  });
+
+
 
   if (loading) {
     return <FullScreenLoader />;

@@ -27,6 +27,7 @@ function App() {
           {/* Private Route */}
           <Route element={<RequireUser allowedRoles={['user', 'admin']} />}>
             <Route path='profile' element={<ProfilePage />} />
+            <Route path='players' element={<PlayersPage />} />
           </Route>
           <Route element={<RequireUser allowedRoles={['admin']} />}>
             <Route path='admin' element={<AdminPage />} />
@@ -35,7 +36,6 @@ function App() {
         </Route>
         <Route path='login' element={<LoginPage />} />
         <Route path='register' element={<RegisterPage />} />
-        <Route path='players' element={<PlayersPage />} />
         <Route path='verifyemail' element={<EmailVerificationPage />}>
           <Route path=':verificationCode' element={<EmailVerificationPage />} />
         </Route>

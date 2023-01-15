@@ -28,6 +28,10 @@ export interface IUser {
   __v: number;
 }
 
+export interface IPlayers {
+  name: string;
+}
+
 export interface IPlayer {
   name: string;
 }

@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useRegisterUserMutation } from '../redux/api/playersApi';
 import { LoadingButton as _LoadingButton } from '@mui/lab';
 import { toast } from 'react-toastify';
+import { useAppSelector } from '../redux/store';
 
 const LoadingButton = styled(_LoadingButton)`
   padding: 0.6rem 0;
@@ -37,6 +38,11 @@ const registerSchema = object({
 export type RegisterInput = TypeOf<typeof registerSchema>;
 
 const PlayersPage = () => {
+
+  const players = useAppSelector((state) => state.playersState.players);
+
+  console.log(players);
+
   const methods = useForm<RegisterInput>({
     resolver: zodResolver(registerSchema),
   });
